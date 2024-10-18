@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sustaining Life: Population Dynamics and Water Resources</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Montserrat:wght@400;700&family=Londrina+Sketch&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/vega@5.21.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.21.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.20.0"></script>
+    <script src="https://d3js.org/d3.v6.min.js"></script> 
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 20px;
+        }
+        h1 {
+            font-family: 'Londrina Sketch', cursive;
+            font-size: 3em;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2em;
+            text-align: center;
+            margin: 40px 0;
+        }
+        h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1em;
+            text-align: center;
+            margin: 40px 0;
+        }
+        p {
+            font-size: 1.2em;
+            line-height: 1.5;
+            text-align: justify;
+        }
+        #map-container, #graph-container {
+            margin-bottom: 40px;
+        }
+        .caption {
+            font-style: italic;
+            text-align: center;
+            font-size: 0.9em;
+            margin-top: 10px;
+            color: #555;
+        }
+        label {
+            font-size: 1.2em;
+            display: block;
+            text-align: center;
+            margin-top: 30px;
+        }
+        select {
+            font-size: 1.1em;
+            padding: 5px;
+            margin: 10px auto;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <h1>Sustaining Life: Population Dynamics and Water Resources</h1>
+    <h3>This visualization explores the relationship between population density, water production, and access to treated water across Malaysia, providing insights for policymakers and citizens. By comparing regional trends, it highlights disparities and supports data-driven decisions for sustainable water resource management.
+    </h3>
+    <div id="map-container">
+        <div id="map-vis"></div>
+        <p class="caption">Population density is a key measure that provides insights into how densely populated an area is. It is calculated by dividing the current population by the land mass area of the state. This measure helps to understand the pressure on resources such as clean water, housing, and infrastructure within each state.
+
+        </p>
+    </div>
+
+    <div id="graph-container">
+        <div id="vis"></div> 
+        <p class="caption">Water production over time by state (in MLD). This graph helps us to understand the water supply across states and see the changes over the years. You can hover over to get more information.</p>
+        
+        <div id="bar-vis"></div> 
+        <p class="caption">This graph shows Percentage of the population with access to treated water by state.We can see how is clean water distributed among the rural and urban population.Go on try different states by selecting below</p>
+    </div>
+
+    <div>
+        <label for="state-select">Select State: </label>
+        <select id="state-select"></select> 
+    </div>
+
+    <h2>Reason for Analysis</h2>
+    <p>I am currently working on a project to improve
+         the clean water system in Malaysia. 
+         The primary goal is to determine which state we should focus on.
+        By analyzing population density, water production, and
+         water accessibility across various states,
+          I aim to pinpoint regions where water systems are under pressure or
+           where improvements are most needed.
+            This insight will allow us to prioritize our efforts and resources more effectively.</p>
+
+    <script src="js/map.js"></script>
+    <script src="js/water_access_bar_chart.js"></script> 
+    <script src="js/graph.js"></script> 
+    <footer>
+        <p>Created by Mohamed Azhan Ameed Pillai, October 2024. Licensed under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></p>
+    </footer>
+    
+</body>
+</html>
